@@ -13,7 +13,7 @@ namespace TimeSpeed.Framework
         ** Accessors
         *********/
         /// <summary>The default number of seconds per 10-game-minutes, or <c>null</c> to freeze time globally. The game uses 7 seconds by default.</summary>
-        public double? DefaultTickLength { get; set; } = 7.0;
+        public double? DefaultTickLength { get; set; } = 40.0;
 
         /// <summary>The number of seconds per 10-game-minutes (or <c>null</c> to freeze time) for each location. The key can be a location name or <see cref="LocationType"/> value.</summary>
         /// <remarks>Most location names can be found at "\Stardew Valley\Content\Maps" directory. They usually match the file name without its extension. 'Mine' is a special case which includes all mine maps.</remarks>
@@ -44,11 +44,11 @@ namespace TimeSpeed.Framework
         /// </example>
         public Dictionary<string, double?> TickLengthByLocation { get; set; } = new(StringComparer.OrdinalIgnoreCase)
         {
-            { LocationType.Indoors.ToString(), 14 },
-            { LocationType.Outdoors.ToString(), 7 },
-            { LocationType.Mine.ToString(), 7 },
-            { LocationType.SkullCavern.ToString(), 9 }, // Skull Cavern time passes slower in-game by default
-            { LocationType.VolcanoDungeon.ToString(), 7 }
+            { LocationType.Indoors.ToString(), 40 },
+            { LocationType.Outdoors.ToString(), 40 },
+            { LocationType.Mine.ToString(), 40 },
+            { LocationType.SkullCavern.ToString(), 40 }, // Skull Cavern time passes slower in-game by default
+            { LocationType.VolcanoDungeon.ToString(), 40 }
         };
 
         /// <summary>Whether to change tick length on festival days.</summary>
